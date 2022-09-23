@@ -319,7 +319,7 @@ export const SandboxPage = (props) => {
       {({ contentBoxHeight, contentBoxWidth }) => (
         <Box height={contentBoxHeight} width={contentBoxWidth} sx={{ overflowY: 'auto', paddingTop: theme.props.topBarheight + 'px', paddingLeft: theme.props.drawerWidth + 'px' }}>
           <Typography>
-            Play with me nicely0123123
+            Play with me nicely0123
           </Typography>
 
           <DataGrid1

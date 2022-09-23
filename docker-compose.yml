@@ -1,11 +1,18 @@
 version: '3.7'
 
 services:
-  notifications:
+  sandbox:
     build:
       dockerfile: Dockerfile
       context: .
     container_name: sandbox
     restart: always
+    ports:
+      - '8090:80'
+      - '8000:80'
+
+      # - '5173:5173'
     volumes:
-      - ./local:/dest
+      - ./:/sandbox
+      - /sandbox/vendor
+      - /sandbox/node_modules

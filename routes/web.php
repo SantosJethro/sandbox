@@ -14,21 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/{path?}', function () {
-    $manifest = [];
-    if(env("APP_ENV") === "production"){
-      try{
-        $manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
-      }catch(Exception $e){
-        throw new Error('you are in production mode and manifest.json is missing. you must have forgotten to run npm run build');
-      }
-    }
-    return view('pages/main', [
-      "manifest" => $manifest
-    ]);
-    // return view('pages/main');
+    // $manifest = [];
+    // if(env("APP_ENV") === "production"){
+    //   try{
+    //     $manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
+    //   }catch(Exception $e){
+    //     throw new Error('you are in production mode and manifest.json is missing. you must have forgotten to run npm run build');
+    //   }
+    // }
+    // return view('pages/main', [
+    //   "manifest" => $manifest
+    // ]);
+    return view('pages/main');
 })->where('path', '.*');
 
 
-Route::get('/', function () {
+Route::get('/asd', function () {
     return view('welcome');
 });

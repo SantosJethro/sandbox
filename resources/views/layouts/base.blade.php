@@ -12,9 +12,12 @@
 
     <link href="{{ asset('assets/img/empty.png') }}" rel="icon" type="image/png" />
     <!-- Scripts -->
+    <script src="{{ mix('js/manifest.js') }}" defer></script>
+     <script src="{{ mix('js/vendor.js') }}" defer></script>
     @yield('scripts')
     <!-- Load additional scripts before loading the app bundle-->
-    @if (env('APP_ENV') === 'local')
+    <script src="{{ mix('js/app.js') }}" defer></script>
+    {{-- @if (env('APP_ENV') === 'local')
         <!-- you are in development mode -->
         <script type="module" src="http://localhost:5173/@vite/client"></script>
         <script type="module" src="http://localhost:5173/resources/js/app.jsx"></script>
@@ -22,7 +25,7 @@
         <!-- you are in production mode -->
         <link rel="stylesheet" href="{{ env('APP_URL') }}/build/{{ $manifest['resources/js/app.css']['file'] }}" />
         <script type="module" src="{{ env('APP_URL') }}/build/{{ $manifest['resources/js/app.jsx']['file'] }}"></script>
-    @endif
+    @endif --}}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
